@@ -1,0 +1,57 @@
+body {
+  font-family: 'Comic Sans', sans-serif;;
+}
+
+img {
+  width: 260px;
+  height: 400px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.title {
+  background-color: purple;
+  color: pink;
+  text-align: center;
+}
+
+.synopsis {
+  background-color: black;
+  color: yellow;
+  width: 48%;
+  float: left;
+}
+
+.poster {
+  background-color: yellow;
+  color: black;
+  width: 48%;
+  float: right;
+}
+
+.searchpage {
+  background-color: orange;
+  color: green;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.box {
+  margin: 5px;
+}
+
+.error {
+  height: 400px;
+  width: 260px;
+  background-color: hotpink;
+  color: blue;
+}
