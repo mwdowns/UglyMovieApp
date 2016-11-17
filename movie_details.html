@@ -1,29 +1,27 @@
-<form ng-submit="searchmovie()">
-  <input type="text" ng-model="search" placeholder="search for a movie">
-</form>
-<br>
-<br>
-Go now. Watch your circus. Eat your bread.
-<br>
-<br>
-<div class="title">
-<h1>{{title}}</h1><br>
+
+<div class="title_details">
+<h1>{{title}}</h1>
 <h5>{{tagline}}</h5>
 </div>
-<br>
-<br>
-<div class="synopsis">
-  <p>{{overview}}</p>
+<div class="container">
+  <div class="poster">
+    <div class="error" ng-if="!poster_path">No poster for {{title}}</div>
+    <img ng-if="poster_path" ng-src="https://image.tmdb.org/t/p/w300/{{poster_path}}" />
+  </div>
+  <div class="synopsis">
+    <p>{{overview}}</p>
+    <br>
+    <br>
+    Running time: {{runtime}} minutes
+    <br>
+    <br>
+    Released on {{release_date}}
+    <br>
+    <br>
+    Genres:
+    <br>
+    <ul>
+      <li ng-repeat="entry in genres">{{entry.name}}</li>
+    </ul>
+  </div>
 </div>
-<br>
-<br>
-<div class="poster">
-  <div class="error" ng-if="!poster_path">No poster for {{title}}</div>
-  <img ng-if="poster_path" ng-src="https://image.tmdb.org/t/p/original/{{poster_path}}" />
-</div>
-<br>
-<br>
-Running time: {{runtime}} minutes
-<br>
-<br>
-Released on {{release_date}}

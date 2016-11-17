@@ -1,13 +1,8 @@
-<form ng-submit="searchmovie()">
-  <input type="text" ng-model="search" placeholder="search for a movie">
-</form>
-<br>
-<br>
 
-<p>Your results for <em>{{search}}</em>, plebian.</p>
 <div class="container">
-  <div class="box" ng-click="getmovieid(entry)" ng-repeat="entry in data">
-    <div class="error" ng-if="!entry.poster_path">No poster for {{entry.title}}</div>
-    <img ng-if="entry.poster_path" ng-src="https://image.tmdb.org/t/p/original/{{entry.poster_path}}" />
+  <div class="box" ng-show="entry.poster_path" ng-click="getmovieid(entry)" ng-repeat="entry in data" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
+    <!-- <div class="error" ng-if="!entry.poster_path"><h1>No poster for <em>{{entry.title}}</em></h1></div> -->
+        <img ng-hide="hoverShow" ng-src="https://image.tmdb.org/t/p/w300/{{entry.poster_path}}" />
+        <h1 ng-hide="!hoverShow">{{entry.title}}</h1>
   </div>
 </div>

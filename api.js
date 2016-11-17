@@ -60,8 +60,8 @@ app.controller('MainController', function($scope, MovieService, $stateParams, $s
       $scope.results = results.results;
     });
   };
-
   $scope.searchmovie = function(search) {
+    console.log(search);
     $state.go('search_results', {search: $scope.search});
   };
 });
@@ -77,6 +77,14 @@ app.controller('SearchResults', function($scope, MovieService, $stateParams, $st
     $scope.poster_path = data.poster_path;
   });
 
+  $scope.hoverIn = function() {
+    this.hoverShow = true;
+  };
+
+  $scope.hoverOut = function() {
+    this.hoverShow = false;
+  };
+
   $scope.getmovieid = function(entry) {
     $scope.id = entry.id;
     $state.go('movie_details', {id : $scope.id});
@@ -90,12 +98,14 @@ app.controller('SearchResults', function($scope, MovieService, $stateParams, $st
 app.controller('MovieDetails', function($scope, MovieService, $stateParams, $state) {
   $scope.id = $stateParams.id;
   MovieService.getDetails($scope.id).success(function(data) {
+    console.log(data);
     $scope.title = data.title;
     $scope.overview = data.overview;
     $scope.poster_path = data.poster_path;
     $scope.runtime = data.runtime;
     $scope.release_date = data.release_date;
     $scope.tagline = data.tagline;
+    $scope.genres = data.genres;
   });
 
   $scope.searchmovie = function(search) {

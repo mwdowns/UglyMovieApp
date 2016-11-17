@@ -7,9 +7,19 @@
     <script src="angular-ui-router.js"></script>
     <script src="api.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   </head>
   <body ng-app="movie">
-    <a ui-sref="search" ui-sref-active="active">Home</a>
+    <!-- <a ui-sref="search" ui-sref-active="active">Home</a> -->
+    <div class="title">
+      <h1>MATT'S MAGICAL MOVIES!!</h1>
+    </div>
+
+    <div ng-controller="MainController">
+    <form class="searchbox_1">
+      <input class="search_1" type="text" ng-change="searchmovie()" ng-model="search" placeholder="search for a movie">
+    </form>
+    </div>
     <ui-view></ui-view>
   </body>
 </html>
