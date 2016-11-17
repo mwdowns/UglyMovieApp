@@ -70,6 +70,7 @@ app.controller('SearchResults', function($scope, MovieService, $stateParams, $st
 
   $scope.search = $stateParams.search;
   MovieService.searchMovie($scope.search).success(function(data) {
+    console.log(data);
     $scope.data = data.results;
     $scope.title = data.title;
     $scope.overview = data.overview;
@@ -89,7 +90,6 @@ app.controller('SearchResults', function($scope, MovieService, $stateParams, $st
 app.controller('MovieDetails', function($scope, MovieService, $stateParams, $state) {
   $scope.id = $stateParams.id;
   MovieService.getDetails($scope.id).success(function(data) {
-    console.log(data);
     $scope.title = data.title;
     $scope.overview = data.overview;
     $scope.poster_path = data.poster_path;

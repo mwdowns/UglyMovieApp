@@ -18,7 +18,7 @@ Go now. Watch your circus. Eat your bread.
 <br>
 <br>
 <div class="poster">
-  <div class="error" ng-if="!poster_path">No poster for this movie</div>
+  <div class="error" ng-if="!poster_path">No poster for {{title}}</div>
   <img ng-if="poster_path" ng-src="https://image.tmdb.org/t/p/original/{{poster_path}}" />
 </div>
 <br>
